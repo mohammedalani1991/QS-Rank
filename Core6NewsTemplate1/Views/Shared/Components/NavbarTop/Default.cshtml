@@ -36,7 +36,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@item.EnName</a>
                             <div class="dropdown-menu m-0">
-                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id))
+                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id).OrderBy(n=>n.indx))
                                 {
                                     <a href="@subitem.Url" class="dropdown-item">@subitem.EnName</a>
                                 }
@@ -58,7 +58,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@item.Name</a>
                             <div class="dropdown-menu m-0">
-                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id))
+                                @foreach (var subitem in Model.NavMenuItems.Where(n => n.NavMenuId == item.Id).OrderBy(n=>n.indx))
                                 {
                                     <a href="@subitem.Url" class="dropdown-item">@subitem.Name</a>
                                 }

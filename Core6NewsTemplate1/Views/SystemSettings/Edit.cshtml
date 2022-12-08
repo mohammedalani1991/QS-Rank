@@ -6,9 +6,9 @@
 }
 
 <partial name="_ViewHeader" />
-<div class="px-5">
+<div class="container">
 
-    <div class="px-5">
+    <div class="container">
         <h4>التعديل على اعدادات الموقع</h4>
         <hr />
         <div class="row">
@@ -109,11 +109,10 @@
                         <input asp-for="LargeLogo" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
                         <span asp-validation-for="LargeLogo" class="text-danger"></span>
                     </div>
-
                     <div class="mb-3">
                         <label asp-for="FavIcon" class="control-label"></label>
-                        <input class="form-control" type="file" name="FavIconfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
-                        <input asp-for="FavIcon" class="form-control" id="file" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input class="form-control" type="file" name="FavIconfile" id="FavIconfile" accept=".png,.jpg,.jpeg,.gif,.tif,.jfif">
+                        <input asp-for="FavIcon" class="form-control" id="fileinput" >
                         <span asp-validation-for="FavIcon" class="text-danger"></span>
                     </div>
                     <div class="mb-3" hidden>
@@ -176,6 +175,17 @@
 </div>
 
 @section Scripts {
+    <script>
+        $(document).ready(function() {
+            $("#FavIconfile").change(function() {
+                alert("s");
+                if ($(this).val() != "") {
+                    $(this).siblings("#fileinput").prop("value", $(this).val().split('\\').pop());
+                }
+               
+            });
+        });
+    </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

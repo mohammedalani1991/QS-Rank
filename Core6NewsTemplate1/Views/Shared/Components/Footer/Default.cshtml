@@ -35,7 +35,7 @@
                     <div class="d-flex pt-2">
                         @if (Model.SystemSettings.Twitter != null)
                         {
-                            <a class="btn btn-square me-1" href="@Model.SystemSettings.Twitter"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square me-0" href="@Model.SystemSettings.Twitter"><i class="fab fa-twitter"></i></a>
                         }
                         @if (Model.SystemSettings.FB != null)
                         {
@@ -47,7 +47,11 @@
                         }
                         @if (Model.SystemSettings.Linkedin != null)
                         {
-                            <a class="btn btn-square me-0" href="@Model.SystemSettings.Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-square me-1" href="@Model.SystemSettings.Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        }
+                        @if (Model.SystemSettings.Linkedin != null)
+                        {
+                            <a class="btn btn-square me-1" href="@Model.SystemSettings.Instagram"><i class="fab fa-instagram"></i></a>
                         }
                     </div>
                 </div>

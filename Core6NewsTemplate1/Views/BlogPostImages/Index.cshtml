@@ -4,7 +4,7 @@
     ViewData["Title"] = "اضافة الصور";
 }
 <partial name="_ViewHeader" />
-<div class="px-5">
+<div class="container">
     <a asp-controller="BlogPosts" asp-action="Details" asp-route-id="@ViewData["postid"]">رجوع الى الموضوع</a>
     <p>اضف صورة</p>
     <form asp-action="Create" enctype="multipart/form-data">

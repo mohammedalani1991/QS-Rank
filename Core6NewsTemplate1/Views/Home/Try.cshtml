@@ -1,8 +1,80 @@
-﻿<style>
-.pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
+﻿<partial name="_ViewHeader" />
+<style>
+    #shiva {
+        width: 100px;
+        height: 100px;
+        background: red;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+        float: left;
+        margin: 5px;
+    }
+
+    .count {
+        line-height: 100px;
+        color: white;
+        margin-left: 30px;
+        font-size: 25px;
+    }
+
+    #talkbubble {
+        width: 120px;
+        height: 80px;
+        background: red;
+        position: relative;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        float: left;
+        margin: 20px;
+    }
+
+        #talkbubble:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 26px;
+            width: 0;
+            height: 0;
+            border-top: 13px solid transparent;
+            border-right: 26px solid red;
+            border-bottom: 13px solid transparent;
+        }
+
+    .linker {
+        font-size: 20px;
+        color: black;
+    }
+
 </style>
-<div id="example1"></div>
+<a href="https://www.i-visionblog.com/2022/05/odometerjs-animated-number-counter-from.html" class="linker">New Updated Tutorial: Odometer.js Animated Number Counter From Zero To Value - JavaScript Animation Part 2 - i-visionblog </a>
+<div id="shiva"><span class="count">200</span></div>
+<div id="shiva"><span class="count">1000</span></div>
+<div id="shiva"><span class="count">853</span></div>
+<div id="shiva"><span class="count">154</span></div>
+<div id="shiva"><span class="count">10</span></div>
+<div id="shiva"><span class="count">87</span></div>
+<div style="clear:both"></div>
+<div id="talkbubble"><span class="count">1421</span></div>
+<div id="talkbubble"><span class="count">145</span></div>
+<div id="talkbubble"><span class="count">78</span></div>
+<br />
+<br />
+<a class="linker" href="http://www.i-visionblog.com/2014/11/jquery-animated-number-counter-from-zero-to-value-jquery-animation.html" target="_blank">visit Tutorial in Blog</a>
+<br />
 @section scripts{
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js"></script>
-<script>PDFObject.embed("/Files/0a6accaf-e17f-4ecd-aaf5-208c7a4df0a2.pdf", "#example1");</script>
+    <script>
+        $('.count').each(function() {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    </script>
 }

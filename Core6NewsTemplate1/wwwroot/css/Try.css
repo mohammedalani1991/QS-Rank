@@ -8,10 +8,7 @@
     text-align: center;
 }
 
-h2 {
-    font-family: sans-serif;
-    color: #fff;
-}
+
 
 .carousel {
     width: 90%;
@@ -27,7 +24,3 @@ h2 {
         border: 2px solid #fff;
     }
 
-.wrapper .slick-dots li button:before {
-    font-size: 20px;
-    color: white;
-}
