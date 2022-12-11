@@ -185,7 +185,7 @@
 </value>
   </data>
   <data name="Volunteers" xml:space="preserve">
-    <value>المُستفيدون</value>
+    <value>المتطوعون</value>
   </data>
   <data name="Your Name" xml:space="preserve">
     <value>اسمك</value>
@@ -194,7 +194,7 @@
     <value>احصائيات</value>
   </data>
   <data name="Donners" xml:space="preserve">
-    <value>الداعمين</value>
+    <value>الداعمون</value>
   </data>
   <data name="Our:" xml:space="preserve">
     <value>منظمة بدار:</value>

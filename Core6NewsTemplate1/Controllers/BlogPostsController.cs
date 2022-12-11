@@ -49,7 +49,7 @@ namespace WebOS.Controllers
             //var applicationDbContext = _context.BlogPost.Include(b => b.ApplicationUser).Include(b => b.BlogTaxonomy);
             return View(blogVM);
         }
-        public IActionResult Search(int? page,string q)
+        public IActionResult Search(int? page, string q)
         {
             var pagenumber = page ?? 1;
             ViewData["q"] = q;
@@ -123,10 +123,10 @@ namespace WebOS.Controllers
             BlogViewModel blogVM = new BlogViewModel()
             {
                 SystemSettings = _context.SystemSettings.FirstOrDefault(),
-                FeaturedBlogPosts = _context.BlogPost.Include(b=>b.BlogTaxonomy).Where(b=>b.Id!=id).OrderByDescending(b => b.PostDateTime).Take(4),
+                FeaturedBlogPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.Id != id).OrderByDescending(b => b.PostDateTime).Take(4),
                 BlogPost = await _context.BlogPost.Include(b => b.BlogTaxonomy).FirstOrDefaultAsync(m => m.Id == id),
                 //PostForReading = await _context.BlogPost.Include(b => b.ApplicationUser).Include(b => b.BlogTaxonomy).OrderBy(b => b.Reads).FirstOrDefaultAsync(),
-               // BlogPostComments = _context.BlogPostComment.Include(b => b.BlogPost).Where(b => b.BlogPostId == id && !b.IsHidden),
+                // BlogPostComments = _context.BlogPostComment.Include(b => b.BlogPost).Where(b => b.BlogPostId == id && !b.IsHidden),
                 //BlogPosts = _context.BlogPost.Include(b => b.ApplicationUser).Include(b => b.BlogTaxonomy).Where(b => b.Id != id).Where(b => b.BlogTaxonomyId == post.BlogTaxonomyId || b.BlogTaxonomyId == post.BlogTaxonomy.Sub),
                 BlogPosts = _context.BlogPost.Include(b => b.BlogTaxonomy).Where(b => b.Title.Contains(post.Title) || post.Title.Contains(b.Title)).Take(5),
                 BlogTaxonomies = _context.BlogTaxonomy.Where(b => b.Sub == 0),
@@ -167,6 +167,54 @@ myfile, _environment.WebRootPath, Properties.Resources.Pictures);
 myfile1, _environment.WebRootPath, Properties.Resources.Files);
                 blogPost.IsHidden = false;
                 blogPost.IsDeleted = false;
+                blogPost.Reads = 0;
+                blogPost.PostDateTime = DateTime.Now;
+                blogPost.ApplicationUserId = _userManager.GetUserId(User);
+                blogPost.Id = Guid.NewGuid();
+                _context.Add(blogPost);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            //ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUsers, "Id", "Id", blogPost.ApplicationUserId);
+            ViewData["BlogTaxonomyId"] = new SelectList(_context.Set<BlogTaxonomy>(), "Id", "Name", blogPost.BlogTaxonomyId);
+            return View(blogPost);
+        }
+
+
+        // GET: BlogPosts/Create
+        [Authorize(Roles = RoleName.Admins)]
+        public IActionResult AddReport()
+        {
+            //ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUsers, "Id", "Id");
+            ViewData["BlogTaxonomyId"] = new SelectList(_context.Set<BlogTaxonomy>().Where(b => b.Sub == 0 && b.Id == 3), "Id", "Name");
+            return View();
+        }
+
+        // POST: BlogPosts/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.Admins)]
+        public async Task<IActionResult> AddReport([Bind("Id,Title,Body,Introduction,PostDateTime,DateModified,IsCommentsAllowed,Image,Source,File,IsApproved,IsHidden,IsFeatured,Reads,IsDeleted,ApplicationUserId,Tags,BlogTaxonomyId,EnTitle,EnBody,EnIntroduction,EnSource,EnTags,YouTube,IsPdf")] BlogPost blogPost, IFormFile myfile, IFormFile myfile1, int subvalue)
+        {
+            if (blogPost.Title != null)
+            {
+                if (subvalue != 0)
+                {
+                    blogPost.BlogTaxonomyId = subvalue;
+                }
+
+
+                blogPost.Image = await UserFile.UploadeNewFileAsync(blogPost.Image,
+myfile, _environment.WebRootPath, Properties.Resources.Pictures);
+                blogPost.File = await UserFile.UploadeNewFileAsync(blogPost.File,
+myfile1, _environment.WebRootPath, Properties.Resources.Files);
+                blogPost.IsHidden = false;
+                blogPost.IsDeleted = false;
+                blogPost.IsPdf = true;
+                blogPost.BlogTaxonomyId = 3;
+                blogPost.IsFeatured = false;
                 blogPost.Reads = 0;
                 blogPost.PostDateTime = DateTime.Now;
                 blogPost.ApplicationUserId = _userManager.GetUserId(User);

@@ -1,0 +1,64 @@
+﻿@model WebOS.Models.Upload
+
+@{
+    ViewData["Title"] = "Create";
+}
+<partial name="_ViewHeader" />
+<div class="container">
+    <h1>Create</h1>
+
+<h4>Upload</h4>
+<hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="FileName" class="form-label"></label>*
+                    <input asp-for="FileName" type="file" name="myfile" id="file" accept=".pdf,.docx,.jpg,.png,.xlsx,.txt,.pptx" class="btn btn-primary col-lg-12" />
+                    <input required readonly asp-for="FileName" id="fileinput" class="form-control" />
+                    <span asp-validation-for="FileName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="NameDescription" class="form-label"></label>
+                    <input asp-for="NameDescription" class="form-control" />
+                    <span asp-validation-for="NameDescription" class="text-danger"></span>
+                </div>
+                @*<div class="mb-3" hidden>
+                <label asp-for="ApplicationUserId" class="form-label"></label>
+                <select asp-for="ApplicationUserId" class="form-control" asp-items="ViewBag.ApplicationUserId"></select>
+                </div>*@
+                @*<div class="mb-3" hidden>
+                <label asp-for="CreationDate" class="form-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+                </div>*@
+                <div class="mb-3">
+                    <label asp-for="FolderDestination" class="form-label"></label>
+                    <select asp-for="FolderDestination" asp-items="@Html.GetEnumSelectList<FolderDestination>()" class="form-control input-sm"></select>
+                    <span asp-validation-for="FolderDestination" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="رفع" class="btn btn-secondary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#file").change(function () {
+                if ($("#file").val() != "") {
+                    $("#fileinput").prop("value", $("#file").val().split('\\').pop());
+                }
+            });
+        });
+    </script>
+}

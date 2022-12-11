@@ -26,6 +26,14 @@ namespace WebOS.Models
             return ss;
         }
 
+        public enum FolderDestination
+        {
+            [Display(Name = "Images")]
+            Images = 1,
+            [Display(Name = "Files")]
+            Files = 2,
+        };
+
         public static string GetYoutubeIframe(string youtubelink)
         {
             string s;

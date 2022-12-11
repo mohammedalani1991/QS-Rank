@@ -21,12 +21,12 @@ namespace WebOS.Models
         [Display(Name = "العنوان بالانجليزي")]
         public string EnTitle { get; set; }
 
-        [Required]
+        //[Required]
         [Display(Name = "المحتوى")]
         [StringLength(5000, ErrorMessage = "طول المحتوى يجب ان يتراوح بين 25 حرف و 5000 حرف", MinimumLength = 25)]
         public string Body { get; set; }
 
-        [Required]
+        //[Required]
         [StringLength(5000, ErrorMessage = "طول المحتوى بالانجليزي يجب ان يتراوح بين 25 حرف و 5000 حرف", MinimumLength = 25)]
         [Display(Name = "المحتوى بالانجليزي")]
         public string EnBody { get; set; }

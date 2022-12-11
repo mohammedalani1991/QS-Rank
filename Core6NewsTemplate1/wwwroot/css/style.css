@@ -1,13 +1,15 @@
 
-@import url(//db.onlinewebfonts.com/c/7668f634eb4865a48f04d52ea3fb9b27?family=NeoSansArabic-Medium);
+@import url(//db.onlinewebfonts.com/c/7668f634eb4865a48f04d52ea3fb9b27?family=Tajawal);
+@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
 
 @font-face {
-    font-family: "NeoSansArabic-Medium";
+    font-family: "Tajawal";
+    /* Tajawal */
     src: url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.eot");
-    src: url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.woff") format("woff"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.svg#NeoSansArabic-Medium") format("svg");
+    src: url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.woff") format("woff"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/7668f634eb4865a48f04d52ea3fb9b27.svg#Tajawal") format("svg");
 }
 .droid-arabic-kufi, .Tajawal, button, input, a, p, strong, h1, h2, h3, h4, h5, h6, .btn, td, th, label, li, dd, dt, div, .form-label, fw-bolder {
-    font-family: "NeoSansArabic-Medium"
+    font-family: "Tajawal"
 }
 
 .statictics-bg {

@@ -3,14 +3,14 @@
 @using X.PagedList;
 
 @{
-    ViewData["Title"] = "قائمة المدونات";
+    ViewData["Title"] = "إدارة المحتوى";
 }
 
 @*<h1>Index</h1>*@
 @*<a class="btn btn-primary rounded-0" asp-action="CreateSub" asp-controller="BlogTaxonomies">إضافة قسم فرعي</a>*@
 <partial name="_ViewHeader" />
 <div class="container">
-    <p>إدارة المدونات</p>
+    <p>إدارة المحتوى</p>
 
     <div class="row">
         <div class="col-md-4">
@@ -47,7 +47,7 @@
                     }
                     <tr>
                         <td>
-                            <a class="btn-sm btn-primary rounded-0" asp-action="Create" asp-controller="BlogTaxonomies"><span class="text-success fa fa-plus"></span> قسم رئيسي</a>
+                            <a class="btn-sm btn-success rounded-0" asp-action="Create" asp-controller="BlogTaxonomies"><span class="text-success fa fa-plus"></span> قسم رئيسي</a>
                         </td>
                     </tr>
                 </tbody>
@@ -55,7 +55,7 @@
         </div>
         <div class="col-md-1"></div>
         <div id="divforadd" class="col-md-7 mt-2">
-            <a class="btn-sm btn-primary rounded-0" asp-action="Create" asp-controller="BlogPosts"><span class="text-success fa fa-plus"></span> إضافة منشور</a>
+            <a class="btn-sm btn-success rounded-0" asp-action="Create" asp-controller="BlogPosts"><span class="text-success fa fa-plus"></span> إضافة منشور</a> |  <a class="btn-sm btn-success rounded-0" asp-action="AddReport" asp-controller="BlogPosts"><span class="text-success fa fa-plus"></span> إضافة تقرير</a>
             <div class="input-group mb-3 mt-2">
                 <input id="inputsearch" type="text" class="form-control rounded-0" placeholder="إبحث في المنشورات" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">

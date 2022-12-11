@@ -1,0 +1,59 @@
+﻿@model WebOS.Models.Upload
+
+@{
+    ViewData["Title"] = "Details";
+}
+<partial name="_ViewHeader" />
+<div class="container">
+<h1>Details</h1>
+
+    <div>
+        <h4>تحميل ملف</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.FileName)
+            </dt>
+            <dd class="col-sm-9">
+                @if (Model.FolderDestination == FolderDestination.Files)
+                {
+                    <a href="~/Files/@Html.DisplayFor(model => model.FileName)">تحميل</a>
+                }
+                else if (Model.FolderDestination == FolderDestination.Images)
+                {
+                    <a href="~/Pictures/@Html.DisplayFor(model => model.FileName)">تحميل</a>
+                }
+            
+
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.NameDescription)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NameDescription)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CreationDate)
+            </dd>
+            @*<dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FolderDestination)
+            </dt>
+            <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FolderDestination)
+            </dd>*@
+           @* <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.ApplicationUser)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ApplicationUser.EnName)
+            </dd>*@
+        </dl>
+    </div>
+<div>
+ 
+    <a asp-action="Index">Back to List</a>
+</div>
+</div> 
