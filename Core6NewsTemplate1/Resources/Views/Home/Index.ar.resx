@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="About Us" xml:space="preserve">
-    <value>عن المنظمة</value>
+    <value>عن الموقع</value>
   </data>
   <data name="Beneficiaries" xml:space="preserve">
     <value>المستفيدون</value>
@@ -171,8 +171,8 @@
   <data name="Thanks For The Results Achieved With You" xml:space="preserve">
     <value>شكراً للنتيجة التي استطعنا الوصول اليها بمساعدتكم</value>
   </data>
-  <data name="Namir Ali Hussain, The President" xml:space="preserve">
-    <value>نمير علي حسين ، رئيس المنظمة</value>
+  <data name="QS Ranking Development Team" xml:space="preserve">
+    <value>فريق تطوير موقع QS</value>
   </data>
   <data name="Top News" xml:space="preserve">
     <value>اخر الاخبار</value>

@@ -4,6 +4,8 @@
     ViewData["Title"] = "Delete";
 }
 
+<partial name="_ViewHeader" />
+<div class="container">
 
 <h3>هل أنت متأكد من حذف المدينة "@Model.ArCityName"</h3>
 <div>
@@ -34,4 +36,5 @@
         <input type="submit" value="حذف" class="btn rounded-0 btn-danger" /> 
         <a class="btn btn-primary rounded-0" asp-action="Index" asp-route-cid="@Model.CountryId">رجوع</a>
     </form>
+</div>
 </div>

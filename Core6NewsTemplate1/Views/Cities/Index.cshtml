@@ -6,6 +6,9 @@
 @using X.PagedList.Mvc.Core;
 @using X.PagedList;
 
+<partial name="_ViewHeader" />
+<div class="container">
+
 <h4>المدن التابعة لدولة "@ViewData["countryname"]"</h4>
 
 <p>
@@ -62,3 +65,4 @@
 
 <a asp-action="Index" asp-controller="Countries" class="btn btn-primary rounded-0">رجوع</a>
 
+</div>

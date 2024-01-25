@@ -12,7 +12,7 @@ using X.PagedList;
 
 namespace WebOS.Controllers
 {
-    //[Authorize(Roles ="Users")]
+    [Authorize(Roles = "Admins")]
     public class CountriesController : Controller
     {
         private readonly ApplicationDbContext _context;

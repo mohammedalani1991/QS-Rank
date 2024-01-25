@@ -13,22 +13,22 @@
         <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="EnTitle" class="control-label"></label>
                 <input style="direction:ltr" asp-for="EnTitle" class="form-control" />
                 <span asp-validation-for="EnTitle" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="Description" class="control-label"></label>
                 <textarea asp-for="Description" class="form-control" ></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <label asp-for="EnDescription" class="control-label"></label>
                 <textarea style="direction:ltr" asp-for="EnDescription" class="form-control"></textarea>
                 <span asp-validation-for="EnDescription" class="text-danger"></span>
@@ -40,7 +40,7 @@
                     <input placeholder="هذا الحقل ضروري" readonly asp-for="Image" id="fileinput" class="form-control input-sm" />
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
-            <div class="form-group">
+            <div class="mb-3">
                 <input type="submit" value="حفظ" class="btn btn-primary" />
             </div>
         </form>

@@ -1,0 +1,99 @@
+﻿@model WebOS.Models.University
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<partial name="_ViewHeader" />
+
+<div class="container">
+
+<h1>Edit</h1>
+
+<h4>University</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="mb-3">
+                <label asp-for="ArUniversityName" class="control-label"></label>
+                <input asp-for="ArUniversityName" class="form-control" />
+                <span asp-validation-for="ArUniversityName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EnUniversityName" class="control-label"></label>
+                <input asp-for="EnUniversityName" class="form-control" />
+                <span asp-validation-for="EnUniversityName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+                <span asp-validation-for="Website" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="StaffNo" class="control-label"></label>
+                <input asp-for="StaffNo" class="form-control" />
+                <span asp-validation-for="StaffNo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="StudentNo" class="control-label"></label>
+                <input asp-for="StudentNo" class="form-control" />
+                <span asp-validation-for="StudentNo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="LogoHD" class="control-label"></label>
+                <input asp-for="LogoHD" class="form-control" />
+                <span asp-validation-for="LogoHD" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="YearofEstablishment" class="control-label"></label>
+                <input asp-for="YearofEstablishment" class="form-control" />
+                <span asp-validation-for="YearofEstablishment" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Governmental" /> @Html.DisplayNameFor(model => model.Governmental)
+                </label>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SemiPrivate" /> @Html.DisplayNameFor(model => model.SemiPrivate)
+                </label>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Private" /> @Html.DisplayNameFor(model => model.Private)
+                </label>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Indx" class="control-label"></label>
+                <input asp-for="Indx" class="form-control" />
+                <span asp-validation-for="Indx" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CountryId" class="control-label"></label>
+                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsVisible" /> @Html.DisplayNameFor(model => model.IsVisible)
+                </label>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -54,5 +54,9 @@ namespace WebOS.Data
         public DbSet<WebOS.Models.CauseCategory> CauseCategory { get; set; }
         public DbSet<WebOS.Models.CauseImage> CauseImage { get; set; }
         public DbSet<WebOS.Models.Upload> Upload { get; set; }
+        public DbSet<WebOS.Models.University> University { get; set; }
+        public DbSet<WebOS.Models.Faculty> Faculty { get; set; }
+        public DbSet<WebOS.Models.Department> Department { get; set; }
+        public DbSet<WebOS.Models.DepartmentRank> DepartmentRank { get; set; }
     }
 }

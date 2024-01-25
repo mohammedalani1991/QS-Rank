@@ -1,0 +1,85 @@
+﻿@model RankViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_ViewHeader" />
+
+<div class="container">
+    <h1>الاقسام</h1>
+
+    <p>
+        <a asp-action="Create">اضافة قسم</a>
+    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.ArFacultyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.EnFacultyName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.HasPostGraduation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.Faculty)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Department.City)
+                    </th>
+                    <th>
+                        تقييم QS
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Departments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ArFacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EnFacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HasPostGraduation)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Faculty.ArFacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City.ArCityName)
+                        </td>
+                        @if (Model.DepartmentRanks.Where(r => r.DepartmentId == item.Id).Count() > 0)
+                        {
+                            var x = Model.DepartmentRanks.SingleOrDefault(r => r.DepartmentId == item.Id);
+                            <td>
+
+                              
+                                <a asp-action="Edit" asp-controller="DepartmentRanks" asp-route-id="@x.Id">   @(Convert.ToDouble(x.InternationalStudentRatio) / 100 * 10 + Convert.ToDouble(x.EmployerReputation) / 100 * 20 + Convert.ToDouble(x.Citations) / 100 * 20 + Convert.ToDouble(x.AcademicReputation) / 100 * 50) %</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <a asp-action="Create" asp-controller="DepartmentRanks" asp-route-DepartmentId="@item.Id">اضافة تقييم</a>
+                            </td>
+                        }
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

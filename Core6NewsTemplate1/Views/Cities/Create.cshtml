@@ -4,6 +4,8 @@
     ViewData["Title"] = "Create";
 }
 
+<partial name="_ViewHeader" />
+<div class="container">
 
 <h4>إضافة مدينة</h4>
 <hr />
@@ -35,7 +37,7 @@
 
 <div>
 </div>
-
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

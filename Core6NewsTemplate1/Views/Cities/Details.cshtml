@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Details";
 }
+<partial name="_ViewHeader" />
+<div class="container">
 
 <h1>معلومات المدينة "@Model.ArCityName"</h1>
 
@@ -31,4 +33,5 @@
 </div>
 <div>
     <a class="btn btn-primary rounded-0" asp-action="Index" asp-route-cid="@Model.CountryId">رجوع</a>
+</div>
 </div>

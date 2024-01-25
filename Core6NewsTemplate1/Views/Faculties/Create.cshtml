@@ -1,0 +1,49 @@
+﻿@model WebOS.Models.Faculty
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<partial name="_ViewHeader" />
+
+<div class="container">
+
+
+<h4>اضافة كلية</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="ArFacultyName" class="control-label"></label>
+                <input asp-for="ArFacultyName" class="form-control" />
+                <span asp-validation-for="ArFacultyName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="EnFacultyName" class="control-label"></label>
+                <input asp-for="EnFacultyName" class="form-control" />
+                <span asp-validation-for="EnFacultyName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="UniversityId" class="control-label"></label>
+                <select asp-for="UniversityId" class ="form-control" asp-items="ViewBag.UniversityId"></select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="CityId" class="control-label"></label>
+                <select asp-for="CityId" class ="form-control" asp-items="ViewBag.CityId"></select>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

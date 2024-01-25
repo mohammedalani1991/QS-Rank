@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebOS.Models.DepartmentRank>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_ViewHeader" />
+
+<div class="container">
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicReputation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployerReputation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Citations)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InternationalStudentRatio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcademicReputation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployerReputation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Citations)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternationalStudentRatio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.ArFacultyName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

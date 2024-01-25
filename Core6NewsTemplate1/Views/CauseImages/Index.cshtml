@@ -10,7 +10,7 @@
     <p>اضف صورة</p>
     <form asp-action="Create" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group" hidden>
+        <div class="mb-3" hidden>
             <input value="@ViewData["causeid"]" name="CauseId" class="form-control" />
         </div>
         <div class="mb-3" id="img">
@@ -18,7 +18,7 @@
             <input required type="file" name="myfile" id="file" accept=".png,.jpg,.jpeg,.gif,.tif" class="btn btn-info col-lg-12 input-sm" />
             <input placeholder="هذا الحقل ضروري" readonly name="Image" id="fileinput" class="form-control input-sm" />
         </div>
-        <div class="form-group">
+        <div class="mb-3">
             <input type="submit" value="اضافة الصورة" class="btn btn-primary" />
         </div>
     </form>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using X.PagedList;
 
 namespace WebOS.Controllers
 {
+    [Authorize(Roles ="Admins")]
     public class CitiesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -25,7 +27,7 @@ namespace WebOS.Controllers
         {
             var numberofpage = page ?? 1;
             var cities = _context.City.Where(c=>c.CountryId==cid).OrderBy(c => c.Id);
-            var onepageofcities = cities.ToPagedList(numberofpage, 1);
+            var onepageofcities = cities.ToPagedList(numberofpage, 10);
             ViewBag.onepageofcities = onepageofcities;
 
             ViewData["countryname"] = _context.Country.SingleOrDefault(c => c.Id == cid).ArCountryName;

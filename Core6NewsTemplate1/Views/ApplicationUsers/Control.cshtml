@@ -20,6 +20,39 @@
         </a>
     </div>
     <div class="col-md-2 card my-1 me-1">
+        <a asp-controller="Universities" asp-action="Index" class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem">
+                <div class="card-body text-center">
+                        <span class="fa text-info fa-certificate fa-5x"></span>
+                        <h6 style="padding:20px" class="card-title text-dark">الجامعات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 card my-1 me-1">
+        <a asp-controller="Faculties" asp-action="Index" class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem">
+                <div class="card-body text-center">
+                        <span class="fa text-info fa-certificate fa-5x"></span>
+                        <h6 style="padding:20px" class="card-title text-dark">الكليات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 card my-1 me-1">
+        <a asp-controller="Departments" asp-action="Index" class="nav-item nav-link">
+            <div class="" style="width: 12rem;height:12rem">
+                <div class="card-body text-center">
+                        <span class="fa text-info fa-certificate fa-5x"></span>
+                        <h6 style="padding:20px" class="card-title text-dark">اقسام الكليات</h6>
+                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 card my-1 me-1">
         <a asp-controller="Testimonials" asp-action="Index" class="nav-item nav-link">
             <div class="" style="width: 12rem;height:12rem">
                 <div class="card-body text-center">
@@ -63,17 +96,16 @@
             </div>
         </a>
     </div>
-    <div class="col-md-2 card my-1 me-1">
+   @*  <div class="col-md-2 card my-1 me-1">
         <a asp-controller="Causes" asp-action="Index" class="nav-item nav-link">
             <div class="" style="width: 12rem;height:12rem">
                 <div class="card-body text-center">
                     <span class="fa text-info fa-list fa-5x"></span>
                         <h6 style="padding:20px" class="card-title text-dark">المشاريع</h6>
-                    @*<p class="card-text">يمكنك البحث و التعديل على جميف المستخدمين داخل التطبيق</p>*@
                 </div>
             </div>
         </a>
-    </div>
+    </div> *@
     <div class="col-md-2 card my-1 me-1">
         <a asp-action="Index" asp-controller="ApplicationUsers">
             <div class="" style="width: 12rem;height:12rem">
@@ -96,7 +128,7 @@
             </div>
         </a>
     </div>
-    <div class="col-md-2 card my-1 me-1">
+    @* <div class="col-md-2 card my-1 me-1">
     <a asp-action="Index" asp-controller="Uploads">
     <div class="" style="width: 12rem;height:12rem;">
     <div class="card-body text-center">
@@ -105,7 +137,7 @@
     </div>
     </div>
     </a>
-    </div>
+    </div> *@
     @*<div class="col-md-2 card my-1 me-1">
     <a asp-action="List" asp-controller="Tickets">
     <div class="" style="width: 12rem;height:12rem;">
@@ -126,13 +158,13 @@
             </div>
         </a>
     </div>
-    <div class="col-md-2 card my-1 me-1">
+    @* <div class="col-md-2 card my-1 me-1">
         <a asp-action="Index" asp-controller="Pages">
             <div class="" style="width: 12rem;height:12rem;">
                 <div class="card-body text-center">
                     <span class="fa text-info fa-clipboard fa-5x"></span>
                         <h6 style="padding:20px" class="card-title text-dark">الصفحات</h6>
-                    @*<p class="card-text">تمكنك من إضافة صفحات ثابتة للموقع</p>*@
+                   
                 </div>
             </div>
         </a>
@@ -143,11 +175,11 @@
                 <div class="card-body text-center">
                     <span class="fa text-info fa-clipboard fa-5x"></span>
                         <h6 style="padding:20px" class="card-title text-dark">التقارير</h6>
-                    @*<p class="card-text">تمكنك من إضافة صفحات ثابتة للموقع</p>*@
+                    
                 </div>
             </div>
         </a>
-    </div>
+    </div> *@
    @* <div class="col-md-2 card my-1 me-1">
         <a asp-action="Index" asp-controller="Countries">
             <div class="" style="width: 12rem;height:12rem;">
